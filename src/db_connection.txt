@@ -1,0 +1,5 @@
+username: root
+password: Cursor777
+port: 3306
+server: localhost
+db_file: prescriptionSystemFinalnew

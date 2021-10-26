@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="620.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prescription.setup.MedicineCreateController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="57.0" layoutY="191.0" orientation="VERTICAL" prefHeight="620.0" prefWidth="1360.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.29940564635958394, 0.6047548291233283" layoutX="56.0" layoutY="66.0" prefHeight="306.0" prefWidth="1358.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox fx:id="hBoxSystem" alignment="TOP_CENTER" layoutY="25.0" prefHeight="25.0" prefWidth="398.0" spacing="5.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                 <children>
+                                    <ComboBox prefHeight="25.0" prefWidth="300.0" promptText="System Name" />
+                                    <Button fx:id="btnSaveSystem" mnemonicParsing="false" onAction="#btnSystemSaveAction" prefWidth="45.0" text="Save" />
+                                    <Button fx:id="btnEditSystem" mnemonicParsing="false" onAction="#btnSystemEditAction" prefWidth="45.0" text="Edit" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="tableSystemName" layoutX="82.0" layoutY="30.0" onMouseClicked="#systemTableClickAction" prefHeight="272.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0">
+                                <columns>
+                                    <TableColumn fx:id="systemSlNoCol" maxWidth="150.0" prefWidth="28.0" text="Sl." />
+                                  <TableColumn fx:id="systemNameCol" prefWidth="370.9999694824219" text="System Name" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox fx:id="hBoxDisease2" alignment="TOP_CENTER" layoutY="25.0" prefHeight="25.0" prefWidth="398.0" spacing="5.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="31.0">
+                                 <children>
+                                    <ComboBox prefHeight="25.0" prefWidth="300.0" promptText="Disease Name" />
+                                    <Button fx:id="btnSaveDisease" mnemonicParsing="false" onAction="#btnDiseaseSaveAction" prefWidth="45.0" text="Save" />
+                                    <Button fx:id="btnEditDisease" mnemonicParsing="false" onAction="#btnDiseaseEditAction" prefWidth="45.0" text="Edit" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="tableDisease" layoutX="82.0" layoutY="55.0" onMouseClicked="#diseaseTableClickAction" prefHeight="247.0" prefWidth="447.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+                                 <columns>
+                                    <TableColumn fx:id="diseaseSlNoCol" maxWidth="200.0" prefWidth="28.0" text="Sl." />
+                                    <TableColumn fx:id="diseaseCol" prefWidth="376.0" text="Disease Name" />
+                                 </columns>
+                              </TableView>
+                              <VBox fx:id="vBoxSystemDisease" layoutX="3.0" layoutY="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                 <children>
+                                    <ComboBox prefWidth="700.0" promptText="System Name" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox fx:id="hBoxGroup2" alignment="TOP_CENTER" layoutY="25.0" prefHeight="25.0" prefWidth="398.0" spacing="5.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="31.0">
+                                 <children>
+                                    <ComboBox prefHeight="28.0" prefWidth="432.0" promptText="Medicine Group Name" />
+                                    <Button fx:id="btnSaveGroup" mnemonicParsing="false" onAction="#btnGroupSaveAction" prefWidth="45.0" text="Save" />
+                                    <Button fx:id="btnEditGroup" mnemonicParsing="false" onAction="#btnGroupEditAction" prefWidth="45.0" text="Edit" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="tableGroup" layoutX="82.0" layoutY="55.0" onMouseClicked="#groupTableClickAction" prefHeight="247.0" prefWidth="529.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+                                 <columns>
+                                    <TableColumn fx:id="groupSlNoCol" maxWidth="200.0" prefWidth="28.0" text="Sl." />
+                                    <TableColumn fx:id="groupCol" prefWidth="500.0" text="Medicine Group Name" />
+                                 </columns>
+                              </TableView>
+                              <HBox fx:id="hBoxGroup" layoutX="31.0" layoutY="-36.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                 <children>
+                                    <ComboBox prefHeight="25.0" prefWidth="300.0" promptText="System Name" />
+                                    <ComboBox prefHeight="25.0" prefWidth="300.0" promptText="Disease Name" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" layoutX="108.0" layoutY="153.0" prefHeight="306.0" prefWidth="1358.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox fx:id="hBoxGeneric2" alignment="TOP_CENTER" layoutY="25.0" prefHeight="25.0" prefWidth="398.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0">
+                                 <children>
+                                    <ComboBox prefHeight="25.0" prefWidth="300.0" promptText="Generic Name" />
+                                    <Button fx:id="btnSaveGeneric" mnemonicParsing="false" onAction="#btnGenericSaveAction" prefWidth="45.0" text="Save" />
+                                    <Button fx:id="btnEditGeneric" mnemonicParsing="false" onAction="#btnGenericEditAction" prefWidth="45.0" text="Edit" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="tableGeneric" layoutX="82.0" layoutY="61.0" onMouseClicked="#genericTableClickAction" prefHeight="240.0" prefWidth="670.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+                                 <columns>
+                                    <TableColumn fx:id="genericSlNoCol" maxWidth="200.0" prefWidth="28.0" text="Sl." />
+                                    <TableColumn fx:id="genericCol" prefWidth="640.9999847412109" text="Generic Name" />
+                                 </columns>
+                              </TableView>
+                              <HBox fx:id="hBoxGeneric" layoutY="-36.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                 <children>
+                                    <ComboBox prefHeight="25.0" prefWidth="236.0" promptText="System Name" />
+                                    <ComboBox prefHeight="25.0" prefWidth="236.0" promptText="Disease Name" />
+                                    <ComboBox prefHeight="25.0" prefWidth="236.0" promptText="Medicine Group Name" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox fx:id="hBoxCompanyNameBrand" alignment="TOP_CENTER" layoutY="25.0" prefHeight="25.0" prefWidth="398.0" spacing="5.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="31.0">
+                                 <children>
+                                    <ComboBox prefHeight="28.0" prefWidth="388.0" promptText="Brand Name" />
+                                    <ComboBox prefHeight="25.0" prefWidth="180.0" promptText="Company Name" />
+                                    <Button fx:id="btnSaveBrand" mnemonicParsing="false" onAction="#btnBrandSaveAction" prefWidth="45.0" text="Save" />
+                                    <Button fx:id="btnEditBrand" mnemonicParsing="false" onAction="#btnBrandEditAction" prefWidth="45.0" text="Edit" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="tableBrand" layoutX="82.0" layoutY="30.0" onMouseClicked="#brandTableClickAction" prefHeight="272.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+                                 <columns>
+                                    <TableColumn fx:id="brandSlNoCol" maxWidth="200.0" prefWidth="28.0" text="Sl." />
+                                    <TableColumn fx:id="brandNameCol" prefWidth="493.0" text="Brand Name" />
+                                    <TableColumn fx:id="companyNameCol" prefWidth="148.0" text="Company Name" />
+                                 </columns>
+                              </TableView>
+                              <VBox fx:id="vBoxGenericBrand" layoutX="3.0" layoutY="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                 <children>
+                                    <ComboBox prefWidth="900.0" promptText="Generic Name" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

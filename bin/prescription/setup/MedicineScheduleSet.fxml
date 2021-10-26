@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="620.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prescription.setup.MedicineScheduleSetController">
+   <children>
+      <SplitPane dividerPositions="0.26409495548961426, 0.4940652818991098" layoutX="300.0" layoutY="218.0" prefHeight="620.0" prefWidth="1360.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tableGeneric" layoutX="98.0" layoutY="87.0" onMouseClicked="#genericTableClickAction" prefHeight="333.0" prefWidth="546.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="87.0">
+                    <columns>
+                      <TableColumn fx:id="genericCol" prefWidth="352.0" text="Generic Name" />
+                    </columns>
+                  </TableView>
+                  <VBox fx:id="vBoxHead" layoutX="3.0" layoutY="3.0" prefHeight="84.0" prefWidth="540.0" spacing="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                     <children>
+                        <ComboBox prefHeight="25.0" prefWidth="470.0" promptText="System Name" />
+                        <ComboBox prefHeight="25.0" prefWidth="462.0" promptText="Disease Name" />
+                        <ComboBox prefHeight="25.0" prefWidth="468.0" promptText="Group Name" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tableMedicine" layoutX="-67.0" layoutY="140.0" onMouseClicked="#medicineTableClickAction" prefHeight="420.0" prefWidth="478.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0">
+                    <columns>
+                      <TableColumn fx:id="medicineCol" prefWidth="303.0" text="Medicine Name" />
+                    </columns>
+                  </TableView>
+                  <HBox fx:id="hBoxGeneric" layoutX="-16.0" layoutY="-36.0" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                     <children>
+                        <ComboBox prefHeight="25.0" prefWidth="486.0" promptText="Generic Name" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="618.0" prefWidth="500.0">
+               <children>
+                  <VBox prefHeight="57.0" prefWidth="56.0" spacing="5.0" AnchorPane.leftAnchor="5.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="165.0" text="Generic" />
+                        <Label prefHeight="25.0" prefWidth="165.0" text="Medicine" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vBoxComponent" prefHeight="57.0" prefWidth="619.0" spacing="5.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <ComboBox prefHeight="25.0" prefWidth="537.0" />
+                        <ComboBox prefHeight="25.0" prefWidth="537.0" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="25.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveAction" prefWidth="56.0" text="Save" />
+                        <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#btnEditAction" prefWidth="56.0" text="Edit" />
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteAction" prefWidth="56.0" text="Delete" />
+                        <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#btnRefreshAction" prefWidth="56.0" text="Refresh" />
+                     </children>
+                  </HBox>
+                  <TabPane layoutX="14.0" layoutY="181.0" prefHeight="517.0" prefWidth="669.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                    <tabs>
+                      <Tab text="Initialized">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.45979899497487436" layoutX="119.0" layoutY="53.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="669.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="667.0">
+                                             <children>
+                                                <HBox fx:id="hBoxSchedule" layoutX="7.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <CheckBox fx:id="checkScheduleAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" text="All" />
+                                                      <ComboBox prefHeight="25.0" prefWidth="585.0" />
+                                                      <Button fx:id="btnAddSchedule" mnemonicParsing="false" onAction="#btnScheduleAddAction" text="Add" />
+                                                   </children>
+                                                </HBox>
+                                                <TableView fx:id="tableSchedule" layoutX="30.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="scheduleCol" prefWidth="619.0" text="Schedule" />
+                                                    <TableColumn fx:id="defaultScheduleCol" minWidth="0.0" prefWidth="47.0" text="Default" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="667.0">
+                                             <children>
+                                                <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <items>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="667.0">
+                                                         <children>
+                                                            <HBox fx:id="hBoxTime" layoutX="7.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <CheckBox fx:id="checkTimeAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" text="All" />
+                                                                  <ComboBox prefHeight="25.0" prefWidth="246.0" />
+                                                                  <Button fx:id="btnAddTime" mnemonicParsing="false" text="Add" />
+                                                               </children>
+                                                            </HBox>
+                                                            <TableView fx:id="tableTime" layoutX="30.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="timeCol" prefWidth="283.0" text="Time" />
+                                                                  <TableColumn fx:id="defaultTimeCol" minWidth="0.0" prefWidth="46.0" text="Default" />
+                                                               </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="667.0">
+                                                         <children>
+                                                            <HBox fx:id="hBoxCourse" layoutX="7.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <CheckBox fx:id="checkCourseAll" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="All" />
+                                                                  <ComboBox prefHeight="25.0" prefWidth="234.0" />
+                                                                  <Button fx:id="btnAddCourse" mnemonicParsing="false" prefHeight="25.0" prefWidth="43.0" text="Add" />
+                                                               </children>
+                                                            </HBox>
+                                                            <TableView fx:id="tableCourse" layoutX="30.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="courseCol" prefWidth="275.0" text="Course" />
+                                                                  <TableColumn fx:id="defaultCourseCol" minWidth="0.0" prefWidth="53.0" text="Default" />
+                                                               </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </items>
+                                                </SplitPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="All (Schedule/Time/Course)">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox fx:id="hBoxAll" prefHeight="25.0" prefWidth="669.0" spacing="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0">
+                                       <children>
+                                          <ComboBox fx:id="cmbType" onAction="#typeChangeAction" prefHeight="25.0" prefWidth="92.0" promptText="Type" />
+                                          <ComboBox prefHeight="25.0" prefWidth="415.0" promptText="Name (Schedule/Time / Course)" />
+                                          <Button fx:id="btnAllSave" mnemonicParsing="false" onAction="#btnScheduleSaveAction" text="Save " />
+                                          <Button fx:id="btnAllEdit" mnemonicParsing="false" onAction="#btnScheduleEditAction" text="Edit" />
+                                       </children>
+                                    </HBox>
+                                    <TableView fx:id="tableAll" layoutX="14.0" layoutY="35.0" onMouseClicked="#scheduleTimeAllTableClickAction" prefHeight="456.0" prefWidth="659.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                                      <columns>
+                                        <TableColumn fx:id="nameAllCol" prefWidth="658.0" text="Name" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" />
+   </padding>
+</AnchorPane>

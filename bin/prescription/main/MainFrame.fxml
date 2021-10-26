@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prescription.main.MainFrameController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu fx:id="menuSetup" mnemonicParsing="false" text="Setup">
+                    <items>
+                      <MenuItem fx:id="menuItemCheapComplainCreate" mnemonicParsing="false" onAction="#setCheapComplainCreate" text="Cheap Complain(C/C) Create" />
+                        <MenuItem fx:id="menuItemClinicalExaminationCreate" mnemonicParsing="false" onAction="#setClinicalExaminationCreate" text="Clinical Examination Create" />
+                        <MenuItem fx:id="menuItemMedicineNameCreate" mnemonicParsing="false" onAction="#setMedicineCreaate" text="Medicine Name Create" />
+                        <MenuItem fx:id="menuItemMedicineScheduleSet" mnemonicParsing="false" onAction="#setMedicineScheduleSet" text="Medicine Schedule Set" />
+                        <MenuItem fx:id="menuItemInvestigationTestCreate" mnemonicParsing="false" onAction="#setInvestigationTestCreate" text="Investigation/Test Create" />
+                        <MenuItem fx:id="menuItemAdviseCreate" mnemonicParsing="false" onAction="#setAdviseCreate" text="Advice Create" />
+                        <MenuItem fx:id="menuItemSystemicSurveyQuestionCreate" mnemonicParsing="false" onAction="#setSystemicSurveyQuestionCreate" text="Systemic Survey Question Create" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menuReport" mnemonicParsing="false" text="Report">
+                     <items>
+                        <MenuItem fx:id="menuItemPatientReport" mnemonicParsing="false" onAction="#setPatientReport" text="Patient Report" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuSettings" mnemonicParsing="false" text="Settings">
+                     <items>
+                        <MenuItem fx:id="menuItemUserCreate" mnemonicParsing="false" onAction="#setUserCreate" text="User Create" />
+                        <MenuItem fx:id="menuItemUserAuthentication" mnemonicParsing="false" onAction="#setUserAuthentication" text="User Authentication" />
+                        <MenuItem fx:id="menuItemMyProfile" mnemonicParsing="false" onAction="#setMyProfile" text="My Profile" />
+                        <MenuItem fx:id="menuItemLogOut" mnemonicParsing="false" onAction="#logOutAction" text="LogOut" />
+                     </items>
+                  </Menu>
+               </menus></MenuBar>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="27.0" prefWidth="1366.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox fx:id="hBoxPatientInfo" layoutX="3.0" layoutY="1.0" prefHeight="25.0" prefWidth="1366.0" spacing="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="1.0">
+                           <children>
+                              <DatePicker fx:id="date" prefHeight="25.0" prefWidth="150.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                              <ComboBox prefHeight="25.0" prefWidth="107.0" promptText="Id" />
+                              <ComboBox prefHeight="25.0" prefWidth="350.0" promptText="Patient Name" />
+                              <Label prefHeight="25.0" text="Visit No:">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <ComboBox fx:id="cmbVisitNo" prefHeight="25.0" prefWidth="55.0" />
+                              <TextField fx:id="txtAge" prefHeight="25.0" prefWidth="56.0" promptText="Age" />
+                              <ComboBox prefHeight="25.0" prefWidth="86.0" promptText="Sex" />
+                              <ComboBox prefHeight="25.0" prefWidth="185.0" promptText="Address" />
+                              <TextField fx:id="txtContactNo" prefHeight="25.0" promptText="Contact No" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/icon/notification.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <SplitMenuButton fx:id="splitBtnLogOut" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="LogOut">
+                                <items>
+                                  <MenuItem fx:id="splitMenuLoadData" mnemonicParsing="false" onAction="#splitMenuLoadDataAction" text="Load Data" />
+                                  <MenuItem fx:id="splitMenuItemLogOut" mnemonicParsing="false" onAction="#logOutAction" text="LogOut" />
+                                </items>
+                              </SplitMenuButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="parentPane" layoutY="31.0" prefHeight="669.0" prefWidth="1366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="27.0">
+                     <children>
+                        <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                              <Tab closable="false" text="Prescription Create">
+                                <content>
+                                  <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="1356.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.397341211225997" layoutX="136.0" layoutY="192.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.4649910233393178" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="tableSystem" layoutX="-10.0" layoutY="76.0" onMouseClicked="#systemTableClickAction" prefHeight="316.0" prefWidth="254.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+                                            <columns>
+                                              <TableColumn fx:id="systemCol" prefWidth="253.0" text="System Name" />
+                                            </columns>
+                                          </TableView>
+                                                                              <TextField fx:id="txtSystemName" layoutY="1.0" promptText="System Name" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="tableDisease" layoutX="14.0" layoutY="31.0" onMouseClicked="#diseaseTableClickAction" prefHeight="316.0" prefWidth="254.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+                                            <columns>
+                                              <TableColumn fx:id="diseaseCol" prefWidth="253.0" text="Disease Name" />
+                                            </columns>
+                                          </TableView>
+                                                                              <TextField fx:id="txtDiseaseName" layoutY="1.0" promptText="Disease Name" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.23197492163009403, 0.49686520376175547" layoutX="29.0" layoutY="173.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="tablePrescribedDisease" layoutX="-11.0" layoutY="-55.0" onMouseClicked="#prescribedDiseaseTableClickAction" prefHeight="145.0" prefWidth="293.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="prscribedDiseaseCol" prefWidth="292.0" text="Prescribed Disease" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="tablePrescribedCheapComplain" editable="true" layoutX="47.0" layoutY="14.0" onMouseClicked="#prescribedCheapComplainTableClickAction" prefHeight="163.0" prefWidth="293.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="prescribedCheapComplainCol" prefWidth="292.0" text="Prescribed CC" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                                                              <TableView fx:id="tableClinicalExamination" layoutX="24.0" layoutY="62.0" prefHeight="303.0" prefWidth="403.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                 <columns>
+                                                                                    <TableColumn fx:id="examinationNameCol" prefWidth="162.0" text="Clinical Examination" />
+                                                                                    <TableColumn fx:id="resultCol" prefWidth="153.0" text="Result" />
+                                                                                 </columns>
+                                                                              </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.5616113744075829" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <tabs>
+                                  <Tab text="Cheap Complain">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableCheapComplain" layoutX="135.0" layoutY="62.0" onMouseClicked="#cheapComplainTableClickAction" prefHeight="578.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="cheapComplainCol" prefWidth="397.0" text="Cheap Complain List" />
+                                                  </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtCheapComplain" layoutY="1.0" promptText="Cheap Complain" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
+                                             </children></AnchorPane>
+                                    </content>
+                                  </Tab>
+                                    <Tab text="Clinical Examination">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TreeView fx:id="treeExamination" layoutX="32.0" layoutY="64.0" prefHeight="578.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children></AnchorPane>
+                                       </content>
+                                    </Tab>
+                                  <Tab text="Medicine/Drug">
+                                                                           <content>
+                                                                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                                                                <content>
+                                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="552.0" prefWidth="545.0">
+                                                                                       <children>
+                                                                                          <SplitPane dividerPositions="0.5" layoutX="82.0" layoutY="67.0" orientation="VERTICAL" prefHeight="563.0" prefWidth="545.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                            <items>
+                                                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                                                   <children>
+                                                                                                      <SplitPane dividerPositions="0.4177449168207024" layoutX="27.0" layoutY="42.0" prefHeight="278.0" prefWidth="543.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                                        <items>
+                                                                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                                                                               <children>
+                                                                                                                  <TextField fx:id="txtMedicineGroup" layoutX="-10.0" layoutY="88.0" promptText="Medicine Group Name" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                                  <TableView fx:id="tableMedicineGroup" layoutX="12.0" layoutY="27.0" onMouseClicked="#medicineGroupTableClickAction" prefHeight="249.0" prefWidth="223.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+                                                                                                                    <columns>
+                                                                                                                      <TableColumn fx:id="medicineGroupCol" prefWidth="222.0" text="Medicine Group" />
+                                                                                                                    </columns>
+                                                                                                                  </TableView>
+                                                                                                               </children>
+                                                                                                            </AnchorPane>
+                                                                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                                                                               <children>
+                                                                                                                  <TextField fx:id="txtGeneric" layoutY="38.0" promptText="Generic Name" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                                  <TableView fx:id="tableGeneric" layoutX="24.0" layoutY="26.0" onMouseClicked="#genericTableClickAction" prefHeight="250.0" prefWidth="312.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+                                                                                                                    <columns>
+                                                                                                                      <TableColumn fx:id="genericCol" prefWidth="311.0" text="Generic Name" />
+                                                                                                                    </columns>
+                                                                                                                  </TableView>
+                                                                                                               </children>
+                                                                                                            </AnchorPane>
+                                                                                                        </items>
+                                                                                                      </SplitPane>
+                                                                                                   </children>
+                                                                                                </AnchorPane>
+                                                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                                                   <children>
+                                                                                                      <HBox fx:id="hBoxMedicineBrand" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="543.0" spacing="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                                         <children>
+                                                                                                            <TextField fx:id="txtMedicineBrand" prefWidth="323.0" promptText="Medicine Brand Name" />
+                                                                                                            <ComboBox prefHeight="25.0" prefWidth="252.0" promptText="Time" />
+                                                                                                         </children>
+                                                                                                      </HBox>
+                                                                                                      <HBox fx:id="hBoxSchedule" layoutX="24.0" layoutY="24.0" prefHeight="25.0" prefWidth="543.0" spacing="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+                                                                                                         <children>
+                                                                                                            <ComboBox prefHeight="25.0" prefWidth="291.0" promptText="Schedule" />
+                                                                                                            <ComboBox prefHeight="25.0" prefWidth="96.0" promptText="Course" />
+                                                                                                            <ComboBox prefHeight="25.0" prefWidth="153.0" promptText="Company Name" />
+                                                                                                         </children>
+                                                                                                      </HBox>
+                                                                                                      <TableView fx:id="tableMedicineBrand" layoutX="115.0" layoutY="58.0" onMouseClicked="#medicineBrandTableClickAction" prefHeight="214.0" prefWidth="543.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="56.0">
+                                                                                                        <columns>
+                                                                                                          <TableColumn fx:id="brandCol" prefWidth="320.0" text="Brand Name" />
+                                                                                                          <TableColumn fx:id="companyCol" minWidth="0.0" prefWidth="221.0" text="Company Name" />
+                                                                                                        </columns>
+                                                                                                      </TableView>
+                                                                                                   </children></AnchorPane>
+                                                                                            </items>
+                                                                                          </SplitPane>
+                                                                                       </children>
+                                                                                    </AnchorPane>
+                                                                                </content>
+                                                                              </ScrollPane>
+                                                                           </content>
+                                  </Tab>
+                                  <Tab text="Investigation">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableInvestigation" layoutX="135.0" layoutY="62.0" onMouseClicked="#investigationTableClickAction" prefHeight="578.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="investigationCol" prefWidth="397.0" text="Investigation List" />
+                                                  </columns>
+                                                </TableView>
+                                                <TextField fx:id="txtInvestigation" layoutY="1.0" promptText="Investigation Name" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+                                                                                    <TableView fx:id="tableInvestigationGroup" layoutX="-18.0" layoutY="40.0" onMouseClicked="#investigationGroupTableClickAction" prefHeight="200.0" prefWidth="93.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="28.0">
+                                                                                       <columns>
+                                                                                          <TableColumn fx:id="investigationGroupCol" prefWidth="92.0" text="Group" />
+                                                                                       </columns>
+                                                                                    </TableView>
+                                             </children></AnchorPane>
+                                    </content>
+                                  </Tab>
+                                    <Tab text="Advise">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="tableAdvise" layoutX="95.0" layoutY="197.0" onMouseClicked="#adviseTableClickAction" prefHeight="548.0" prefWidth="303.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="adviseCol" prefWidth="302.0" text="Advise" />
+                                                  </columns>
+                                                </TableView>
+                                                <TableView fx:id="tableAdviseGroup" layoutX="-28.0" layoutY="30.0" onMouseClicked="#adviseGroupTableClickAction" prefHeight="200.0" prefWidth="93.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="52.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="adviseGroupCol" prefWidth="92.0" text="Group" />
+                                                  </columns>
+                                                </TableView>
+                                                                                    <TextArea fx:id="txtAdvise" layoutX="-7.0" layoutY="-69.0" prefHeight="49.0" prefWidth="398.0" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+                                             </children></AnchorPane>
+                                       </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.463743676222597, 0.7504215851602024" layoutX="76.0" layoutY="97.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="tablePrescribedMedicine" layoutX="-9.0" layoutY="29.0" onMouseClicked="#prescribedMedicineTableClickAction" prefHeight="214.0" prefWidth="381.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="medicineNameCol" maxWidth="2000.0" minWidth="50.0" prefWidth="197.0" text="Medicine Name" />
+                                              <TableColumn fx:id="scheduleCol" maxWidth="800.0" minWidth="30.0" prefWidth="71.0" text="Schedule" />
+                                                <TableColumn fx:id="timeCol" maxWidth="500.0" minWidth="30.0" prefWidth="70.0" text="Time" />
+                                                <TableColumn fx:id="courseCol" maxWidth="300.0" minWidth="20.0" prefWidth="48.0" text="Course" />
+                                            </columns>
+                                          </TableView>
+                                       </children></AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="tablePrescribedInvestigation" layoutX="80.0" layoutY="-10.0" prefHeight="180.0" prefWidth="381.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="prescribedInvestigationCol" prefWidth="380.0" text="Prescribed Investigation" />
+                                            </columns>
+                                          </TableView>
+                                       </children></AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="tablePrescribedAdvise" layoutX="46.0" layoutY="33.0" prefHeight="199.0" prefWidth="381.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="prescribedAdviseCol" prefWidth="380.0" text="Prescribed Advise" />
+                                            </columns>
+                                          </TableView>
+                                       </children></AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <HBox fx:id="hBoxNextVisit" alignment="TOP_CENTER" layoutX="212.0" layoutY="616.0" prefHeight="25.0" prefWidth="129.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="20.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="57.0" text="Next Visit:" />
+                        <Spinner fx:id="spinnerNextVisit" editable="true" prefHeight="25.0" prefWidth="69.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="284.0" layoutY="20.0" prefHeight="27.0" prefWidth="321.0" spacing="10.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="180.0">
+                     <children>
+                        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveAction" prefHeight="25.0" prefWidth="70.0" text="Save" />
+                        <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#btnEditAction" prefHeight="25.0" prefWidth="70.0" text="Edit" />
+                        <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#btnPrintAction" prefHeight="25.0" prefWidth="70.0" text="Print" />
+                        <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#btnRefreshAction" prefHeight="25.0" prefWidth="70.0" text="Refresh" />
+                     </children>
+                  </HBox>
+                  <VBox fx:id="vBoxRefferTo" layoutX="927.0" layoutY="624.0" prefHeight="25.0" prefWidth="254.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="530.0" AnchorPane.rightAnchor="5.0">
+                     <children>
+                        <ComboBox prefHeight="25.0" prefWidth="319.0" promptText="Reffer To" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
+                                </content>
+                              </Tab>
+                            <Tab closable="false" text="Clinical History">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.20605612998522896, 0.48301329394387, 0.7193500738552437" layoutX="65.0" layoutY="57.0" prefHeight="617.0" prefWidth="1356.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <items>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                               <children>
+                                                                  <TableView fx:id="tableSystemHistory" layoutX="-10.0" layoutY="76.0" onMouseClicked="#systemTableHistoryClickAction" prefHeight="316.0" prefWidth="254.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+                                                                     <columns>
+                                                                        <TableColumn fx:id="systemHistoryCol" prefWidth="253.0" text="System Name" />
+                                                                     </columns>
+                                                                  </TableView>
+                                                                  <TextField fx:id="txtSystemNameHistory" layoutY="1.0" promptText="System Name" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                               <children>
+                                                                  <TableView fx:id="tableDiseaseHistory" layoutX="14.0" layoutY="31.0" onMouseClicked="#diseaseTableHistoryClickAction" prefHeight="316.0" prefWidth="254.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+                                                                     <columns>
+                                                                        <TableColumn fx:id="diseaseHistoryCol" prefWidth="253.0" text="Disease Name" />
+                                                                     </columns>
+                                                                  </TableView>
+                                                                  <TextField fx:id="txtDiseaseNameHistory" layoutY="1.0" promptText="Disease Name" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </items>
+                                                      </SplitPane>
+                                                   </children></AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <SplitPane dividerPositions="0.633423180592992" layoutX="37.0" layoutY="50.0" orientation="VERTICAL" prefHeight="373.0" prefWidth="369.0" AnchorPane.bottomAnchor="264.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <items>
+                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                               <children>
+                                                                  <VBox fx:id="vBoxSystemSurvey" layoutX="3.0" layoutY="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                                                     <children>
+                                                                        <ComboBox prefWidth="500.0" promptText="System Name" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <TableView fx:id="tableSystemicSurvey" layoutX="102.0" layoutY="28.0" onMouseClicked="#surveyQuestionTableClickAction" prefHeight="154.0" prefWidth="347.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0">
+                                                                    <columns>
+                                                                      <TableColumn fx:id="systemicSurveyCol" prefWidth="346.0" text="Survey Question" />
+                                                                    </columns>
+                                                                  </TableView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                               <children>
+                                                                  <TableView fx:id="tableSelectQuerySurvey" layoutX="28.0" layoutY="-14.0" prefHeight="193.0" prefWidth="347.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                    <columns>
+                                                                      <TableColumn fx:id="selectQuerySurveyCol" prefWidth="346.0" text="Selected Query Question" />
+                                                                    </columns>
+                                                                  </TableView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                        </items>
+                                                      </SplitPane>
+                                                      <VBox layoutX="5.0" layoutY="377.0" prefHeight="169.0" prefWidth="97.0" spacing="2.0" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="5.0">
+                                                         <children>
+                                                            <Label prefHeight="25.0" prefWidth="141.0" text="Job/Proffesion" />
+                                                            <Label prefHeight="25.0" prefWidth="141.0" text="Designation" />
+                                                            <Label prefHeight="25.0" prefWidth="141.0" text="Posting" />
+                                                            <Label prefHeight="25.0" prefWidth="141.0" text="Smoking" />
+                                                            <Label prefHeight="25.0" prefWidth="141.0" text="Betel Leaf" />
+                                                            <Label prefHeight="25.0" prefWidth="141.0" text="Menstrual History" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox fx:id="vBoxJobProffession" layoutX="105.0" layoutY="378.0" prefHeight="168.0" prefWidth="242.0" spacing="2.0" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="5.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="25.0" prefWidth="500.0" />
+                                                            <ComboBox prefHeight="25.0" prefWidth="500.0" />
+                                                            <ComboBox prefHeight="25.0" prefWidth="500.0" />
+                                                            <HBox spacing="10.0">
+                                                               <children>
+                                                                  <CheckBox fx:id="checkSmokingYes" mnemonicParsing="false" prefHeight="25.0" text="Yes" />
+                                                                  <CheckBox fx:id="checkSmokingNO" mnemonicParsing="false" prefHeight="25.0" text="No" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox spacing="10.0">
+                                                               <children>
+                                                                  <CheckBox fx:id="checkBetelYes" mnemonicParsing="false" prefHeight="25.0" text="Yes" />
+                                                                  <CheckBox fx:id="checkBetelNo" mnemonicParsing="false" prefHeight="25.0" text="No" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox spacing="10.0">
+                                                               <children>
+                                                                  <CheckBox fx:id="checkRegular" mnemonicParsing="false" prefHeight="25.0" text="Regular" />
+                                                                  <CheckBox fx:id="checkEregular" mnemonicParsing="false" prefHeight="25.0" text="Eregular" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children></AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="615.0" prefWidth="327.0">
+                                                   <children>
+                                                      <TreeView fx:id="treeIllnessHistory" layoutX="50.0" layoutY="163.0" prefHeight="474.0" prefWidth="316.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="162.0" />
+                                                      <VBox fx:id="vBoxIllnessHistory" layoutX="92.0" layoutY="-50.0" prefHeight="83.0" prefWidth="310.0" spacing="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="25.0" prefWidth="500.0" promptText="System" />
+                                                            <ComboBox prefHeight="25.0" prefWidth="500.0" promptText="Disease" />
+                                                            <Button fx:id="btnAddIllnessHis" mnemonicParsing="false" onAction="#illnessHistoryAddAction" prefHeight="25.0" prefWidth="500.0" text="Add" />
+                                                         </children>
+                                                      </VBox>
+                                                      <GridPane layoutX="25.0" layoutY="85.0" prefHeight="73.0" prefWidth="312.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="85.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="115.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="99.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="84.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints maxHeight="22.0" minHeight="9.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label prefHeight="0.0" prefWidth="95.0" text="Illness History">
+                                                               <font>
+                                                                  <Font name="Arial Black" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label prefHeight="17.0" prefWidth="111.0" text="Familly History" GridPane.rowIndex="2">
+                                                               <font>
+                                                                  <Font name="Arial Black" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <RadioButton fx:id="radioPresentIllness" mnemonicParsing="false" text="Present Illness" GridPane.rowIndex="1">
+                                                               <GridPane.margin>
+                                                                  <Insets left="5.0" />
+                                                               </GridPane.margin>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="radioFatherIllness" mnemonicParsing="false" text="Father Illness" GridPane.rowIndex="3">
+                                                               <GridPane.margin>
+                                                                  <Insets left="5.0" />
+                                                               </GridPane.margin>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="radioPastIllness" mnemonicParsing="false" text="Past Illness" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <RadioButton fx:id="radioMotherIllness" mnemonicParsing="false" text="Mother Illness" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                            <RadioButton fx:id="radioOtherIllness" mnemonicParsing="false" text="Other Illness" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <HBox layoutY="116.0" prefHeight="17.0" prefWidth="306.0" spacing="2.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+                                                         <children>
+                                                            <RadioButton fx:id="radioPresentDrug" mnemonicParsing="false" prefWidth="125.0" text="Present Drug" />
+                                                            <RadioButton fx:id="radioPastDrug" mnemonicParsing="false" text="Past Drug" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox layoutY="136.0" prefHeight="17.0" prefWidth="307.0" spacing="2.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="136.0">
+                                                         <children>
+                                                            <RadioButton fx:id="radioRecentDrug" mnemonicParsing="false" prefWidth="125.0" text="Recent Drug" />
+                                                            <RadioButton fx:id="radioAllergicDrug" mnemonicParsing="false" text="Allergic Drug" />
+                                                         </children>
+                                                      </HBox>
+                                                      <VBox fx:id="vBoxDrugHistory" prefHeight="109.0" prefWidth="347.0" spacing="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                                         <children>
+                                                            <ComboBox prefHeight="25.0" prefWidth="500.0" promptText="Generic" />
+                                                            <ComboBox prefHeight="25.0" prefWidth="500.0" promptText="Medicine" />
+                                                            <ComboBox prefHeight="25.0" prefWidth="500.0" promptText="Schedule" />
+                                                            <Button fx:id="btnAddDrugHis" mnemonicParsing="false" onAction="#drugHistoryAddAction" prefHeight="25.0" prefWidth="500.0" text="Add" />
+                                                         </children>
+                                                      </VBox>
+                                                      <TreeView fx:id="treeDrugHistory" layoutX="46.0" layoutY="163.0" prefHeight="452.0" prefWidth="292.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="162.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

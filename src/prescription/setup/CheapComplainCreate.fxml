@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="620.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prescription.setup.CheapComplainCreateController">
+   <children>
+      <HBox alignment="TOP_CENTER" layoutX="754.0" layoutY="10.0" spacing="20.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <VBox prefHeight="592.0" prefWidth="440.0" spacing="5.0">
+               <children>
+                  <HBox fx:id="hBoxSystem" prefHeight="25.0" prefWidth="346.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="135.0" text="System Name:" />
+                        <ComboBox prefHeight="25.0" prefWidth="330.0" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="5.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="135.0" text="C/C(Cheap Complain):" />
+                        <TextField fx:id="txtCC" prefHeight="25.0" prefWidth="330.0" promptText="Cheap Complain" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnSaveCC" mnemonicParsing="false" onAction="#btnCheapComplainAddAction" prefWidth="60.0" text="Save" />
+                        <Button fx:id="btnEditCC" mnemonicParsing="false" onAction="#btnCheapComplainEditAction" prefWidth="60.0" text="Edit" />
+                        <Button fx:id="btnDeleteCC" mnemonicParsing="false" onAction="#btnCheapComplainRefreshAction" prefWidth="60.0" text="Delete" />
+                        <Button fx:id="btnRefreshCC" mnemonicParsing="false" onAction="#btnCheapComplainRefreshAction" prefWidth="60.0" text="Refresh" />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableCheapComplain" onMouseClicked="#cheapComplainTableClickAtion" prefHeight="503.0" prefWidth="405.0">
+                    <columns>
+                        <TableColumn fx:id="ccSlCol" maxWidth="500.0" prefWidth="45.0" text="SL" />
+                      <TableColumn fx:id="cheapComplainCol" prefWidth="391.0" text="Clinical Examination Name" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <TabPane>
+               <tabs>
+                  <Tab closable="false" text="Suaggested Cause Create">
+                     <content>
+                        <VBox prefHeight="592.0" prefWidth="540.0" spacing="5.0">
+                           <children>
+                              <HBox fx:id="hBoxCheapComplain" prefHeight="25.0" prefWidth="346.0" spacing="5.0">
+                                 <children>
+                                    <Label prefHeight="25.0" prefWidth="95.0" text="Cheap Complain:" />
+                                    <ComboBox prefHeight="25.0" prefWidth="340.0" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <Label prefHeight="25.0" prefWidth="95.0" text="Suggested Cause:" />
+                                    <TextField fx:id="txtSuggestedCause" prefHeight="25.0" prefWidth="340.0" promptText="Suggested Cause" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_CENTER" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="btnSaveCause" mnemonicParsing="false" onAction="#btnSuggestedCauseSaveAction" prefWidth="60.0" text="Save" />
+                                    <Button fx:id="btnEditCause" mnemonicParsing="false" onAction="#btnSuggestedCauseEditAction" prefWidth="60.0" text="Edit" />
+                                    <Button fx:id="btnDeleteCause" mnemonicParsing="false" onAction="#btnSuggestedCauseDeleteAction" prefWidth="60.0" text="Delete" />
+                                    <Button fx:id="btnRefreshCause" mnemonicParsing="false" onAction="#btnSuggestedCauseRefreshAction" prefWidth="60.0" text="Refresh" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="tableSuggestedCause" onMouseClicked="#suggestedCauseTableClickAtion" prefHeight="510.0" prefWidth="405.0">
+                                 <columns>
+                                    <TableColumn fx:id="suggestSlCol" maxWidth="500.0" prefWidth="44.0" text="SL" />
+                                    <TableColumn fx:id="suggestedCauseCol" prefWidth="395.0" text="Suggested Cause List" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Suaggested Cause Filter">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HBox fx:id="hBoxCheapComplainFilter" layoutX="10.0" layoutY="10.0" spacing="5.0">
+                                 <children>
+                                    <Label prefHeight="25.0" prefWidth="117.0" text="C/C(Cheap Complain):" />
+                                    <ComboBox prefHeight="25.0" prefWidth="365.0" />
+                                 </children>
+                              </HBox>
+                              <TextArea fx:id="txtFilterArea" layoutX="7.0" layoutY="43.0" prefHeight="495.0" prefWidth="528.0" />
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="542.0" prefHeight="25.0" prefWidth="527.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="txtFilterBy" prefHeight="25.0" prefWidth="58.0" promptText="Filter By" />
+                                    <Button fx:id="btnFilterText" mnemonicParsing="false" onAction="#btnFilterTextAction" prefWidth="155.0" text="Filter text" />
+                                    <Button fx:id="btnSaveAsCause" mnemonicParsing="false" onAction="#btnSaveAsSuggestedCauseAction" prefWidth="155.0" text="Save As Suggested Cause" />
+                                 </children>
+                              </HBox>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

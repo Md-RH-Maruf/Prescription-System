@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MainReport" language="groovy" pageWidth="220" pageHeight="520" whenNoDataType="AllSectionsNoDetail" columnWidth="220" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 7">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 7_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 7_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 8">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 8_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 8_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<subDataset name="Cheap Complain">
+		<parameter name="patientId" class="java.lang.String"/>
+		<parameter name="visitNo" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select * from tbcchistory ch where patientid=$P{patientId} and visitNo=$P{visitNo}]]>
+		</queryString>
+		<field name="AutotId" class="java.lang.Integer"/>
+		<field name="PatientId" class="java.lang.Integer"/>
+		<field name="visitNo" class="java.lang.Integer"/>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="CheapComplain" class="java.lang.String"/>
+		<field name="entryTime" class="java.sql.Timestamp"/>
+		<field name="entryBy" class="java.lang.String"/>
+		<group name="ccname">
+			<groupExpression><![CDATA[]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="Diagnosis">
+		<parameter name="patientId" class="java.lang.String"/>
+		<parameter name="visitNo" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select * from tbdiagnosishistory dh where patientid=$P{patientId} and visitNo=$P{visitNo}]]>
+		</queryString>
+		<field name="autoId" class="java.lang.Integer"/>
+		<field name="patientId" class="java.lang.Integer"/>
+		<field name="visitNo" class="java.lang.Integer"/>
+		<field name="diagnosisId" class="java.lang.Integer"/>
+		<field name="diagnosisName" class="java.lang.String"/>
+		<field name="entryTime" class="java.sql.Timestamp"/>
+		<field name="entryBy" class="java.lang.String"/>
+		<group name="diagnosisName">
+			<groupExpression><![CDATA[$F{diagnosisName}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="Test">
+		<parameter name="patientId" class="java.lang.String"/>
+		<parameter name="visitNo" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select *,(select groupname from tbtestgroup where id=th.testid )as testName from tbtesthistory th where patientid=$P{patientId} and visitNo=$P{visitNo}]]>
+		</queryString>
+		<field name="autoId" class="java.lang.Integer"/>
+		<field name="patientId" class="java.lang.Integer"/>
+		<field name="visitNo" class="java.lang.Integer"/>
+		<field name="TestId" class="java.lang.Integer"/>
+		<field name="entryTime" class="java.sql.Timestamp"/>
+		<field name="entryBy" class="java.lang.String"/>
+		<field name="testName" class="java.lang.String"/>
+		<group name="testName">
+			<groupExpression><![CDATA[$F{testName}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="ClinicalExamination">
+		<parameter name="patientId" class="java.lang.String"/>
+		<parameter name="visitNo" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select ce.HeadId,ifnull((select name from tbclinicalexamination where id = ce.HeadId),'') as headName,ceh.result,ce.Name,ce.unit from tbcinicalexaminationhistory ceh
+join tbclinicalexamination ce
+on ce.id=ceh.id where patientid=$P{patientId} and visitNo=$P{visitNo} order by ce.HeadId]]>
+		</queryString>
+		<field name="HeadId" class="java.lang.String"/>
+		<field name="headName" class="java.lang.String"/>
+		<field name="result" class="java.lang.String"/>
+		<field name="Name" class="java.lang.String"/>
+		<field name="unit" class="java.lang.String"/>
+		<group name="Name">
+			<groupExpression><![CDATA[$F{Name}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="PescriptionId" class="java.lang.Integer"/>
+	<parameter name="patientId" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA["select * from tbpatientdetails as pd join tbvisithistory as vh on vh.PatientId = pd.patientID where pd.patientid=1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="investigations" class="java.lang.String"/>
+	<parameter name="diagnosis" class="java.lang.String"/>
+	<parameter name="drugHistory" class="java.lang.String"/>
+	<parameter name="visitNo" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select ce.HeadId,ce.`type`,ce.HeadNameList AS headName,ceh.result,ce.Name,ce.unit from tbcinicalexaminationhistory ceh
+join tbclinicalexamination ce
+on ce.id=ceh.id where ceh.patientid=$P{patientId} and ceh.visitNo=$P{visitNo} order by ceh.slNo]]>
+	</queryString>
+	<field name="HeadId" class="java.lang.String"/>
+	<field name="type" class="java.lang.Integer"/>
+	<field name="headName" class="java.lang.String"/>
+	<field name="result" class="java.lang.String"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="unit" class="java.lang.String"/>
+	<group name="HeadName">
+		<groupExpression><![CDATA[$F{headName}]]></groupExpression>
+		<groupHeader>
+			<band height="12">
+				<printWhenExpression><![CDATA[$F{headName}.equals( "" )?false:true]]></printWhenExpression>
+				<textField isBlankWhenNull="true">
+					<reportElement x="7" y="0" width="199" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{headName}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="5" y="65" width="121" height="12">
+					<printWhenExpression><![CDATA[$F{headName}.equals( null )?false:true]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Clinical Examination:]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" x="5" y="0" width="204" height="5"/>
+				<componentElement>
+					<reportElement key="table 4" style="table 4" positionType="Float" x="0" y="0" width="191" height="1"/>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="Cheap Complain">
+							<datasetParameter name="patientId">
+								<datasetParameterExpression><![CDATA[$P{patientId}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="visitNo">
+								<datasetParameterExpression><![CDATA[$P{visitNo}]]></datasetParameterExpression>
+							</datasetParameter>
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+						<jr:column width="206">
+							<jr:tableHeader height="12" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="12"/>
+									<textElement verticalAlignment="Bottom">
+										<font size="8" isBold="true" isUnderline="true"/>
+									</textElement>
+									<text><![CDATA[CC:]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:detailCell style="table 4_TD" height="12" rowSpan="1">
+								<box leftPadding="10"/>
+								<textField isStretchWithOverflow="true">
+									<reportElement x="0" y="0" width="196" height="12"/>
+									<textElement verticalAlignment="Middle">
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression class="java.lang.String"><![CDATA[$F{CheapComplain}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="5" y="6" width="202" height="28"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="8" y="13" width="185" height="14"/>
+					<textElement markup="html">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{drugHistory}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="0" width="100" height="14">
+						<printWhenExpression><![CDATA[$P{drugHistory}.equals("")?false:true]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Drug History:]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" mode="Transparent" x="5" y="36" width="202" height="28"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="8" y="14" width="185" height="14"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{diagnosis}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="0" width="100" height="14">
+						<printWhenExpression><![CDATA[$P{diagnosis}.equals("")?false:true]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Diagnosis:]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="13" y="0" width="100" height="12">
+					<printWhenExpression><![CDATA[$F{headName}.equals( "" )?false:true]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="115" y="0" width="104" height="12"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{result}+" "+$F{unit}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="7" y="0" width="100" height="12">
+					<printWhenExpression><![CDATA[$F{headName}.equals( "" )?true:false]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="5" y="2" width="202" height="27"/>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="0" width="100" height="14">
+						<printWhenExpression><![CDATA[$P{investigations}.equals("")?false:true]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Investigation:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="8" y="13" width="185" height="14"/>
+					<textElement lineSpacing="Single">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{investigations}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>
